@@ -5,11 +5,11 @@ import socket
 import ipaddress
 import struct
 import concurrent
-import argparse
 import fcntl
 import re
 import os
 import sys
+import argparse
 import random
 import time
 from scapy.all import Ether, ARP, srp, send, get_if_hwaddr
