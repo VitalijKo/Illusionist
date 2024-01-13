@@ -45,4 +45,4 @@ check_port 443
 
 echo " "
 
-cd ./server/ && ( gunicorn -b 0.0.0.0:80 -w 1 --reload godofnet.wsgi:application 2> /dev/null & ) ; gunicorn -b 0.0.0.0:443 -w 1 --reload godofnet.wsgi:application 2> /dev/null
+cd ./server/ && ( gunicorn -b 0.0.0.0:80 -w 1 --reload illusionist.wsgi:application 2> /dev/null & ) ; gunicorn -b 0.0.0.0:443 -w 1 --reload illusionist.wsgi:application 2> /dev/null

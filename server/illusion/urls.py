@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path, re_path, include
-from illusion.views import index, search, login, redirect_to
+from disguise.views import index, search, login, redirect_to
 
 urlpatterns = [
     path('', index, name='index'),
